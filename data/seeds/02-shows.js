@@ -4,8 +4,8 @@ exports.seed = function(knex) {
   return knex('shows').insert([
     {
       name: "RoundTop",
-      locations: "Texas",
-      date: 10/21/20,
+      location: "Texas",
+      date: 102120,
       admission: 10,
       days: "Saturday and Sunday"
     }

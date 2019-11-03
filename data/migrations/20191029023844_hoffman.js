@@ -9,7 +9,7 @@ exports.up = function(knex) {
         owners.string('password')
     })
     .createTable('shows', shows => {
-        shows.increments(
+        shows.increments()
         shows
             .string('name')
             .notNullable(),
@@ -23,12 +23,21 @@ exports.up = function(knex) {
             .integer('admission'),
         shows
             .string('days')
-        )
+               
+    })
+    .createTable('categories', categories => {
+        categories.increments()
+        categories
+            .string('name')      
+        
     })
     .createTable('merchandise', merchandise => {
         merchandise.increments()
         merchandise
             .string('image')
+        merchandise
+            .string('category')
+            .notNullable()
         merchandise
             .string('description', 500),
         merchandise
@@ -37,13 +46,21 @@ exports.up = function(knex) {
             .decimal('weight', null)
         merchandise
             .integer('quanity')
-
+        merchandise
+            .integer('categories_id')
+            .unsigned()
+            .references('id')
+            .inTable('categories')
+            .onDelete('CASCADE')
+            .onUpdate('CASCADE')
     })
-};
+}
+   
 
 exports.down = function(knex) {
   return knex.schema
     .dropTableIfExists('owners')
     .dropTableIfExists('shows')
     .dropTableIfExists('merchandise')
+    .dropTableIfExists('categories')
 };
