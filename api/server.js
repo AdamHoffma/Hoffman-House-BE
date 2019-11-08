@@ -6,6 +6,7 @@ const ownersRouter = require('../auth/ownersRouter.js')
 const showsRouter = require("../routes/shows/showsRouter.js")
 const merchandiseRouter = require('../routes/merchandise/merchandiseRouter')
 
+
 server.use(helmet())
 server.use(express.json())
 server.use(cors())

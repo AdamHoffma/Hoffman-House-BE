@@ -24,13 +24,7 @@ exports.up = function(knex) {
         shows
             .string('days')
                
-    })
-    .createTable('categories', categories => {
-        categories.increments()
-        categories
-            .string('name')      
-        
-    })
+    })   
     .createTable('merchandise', merchandise => {
         merchandise.increments()
         merchandise
@@ -45,14 +39,7 @@ exports.up = function(knex) {
         merchandise
             .decimal('weight', null)
         merchandise
-            .integer('quanity')
-        merchandise
-            .integer('categories_id')
-            .unsigned()
-            .references('id')
-            .inTable('categories')
-            .onDelete('CASCADE')
-            .onUpdate('CASCADE')
+            .integer('quanity')     
     })
 }
    
@@ -62,5 +49,5 @@ exports.down = function(knex) {
     .dropTableIfExists('owners')
     .dropTableIfExists('shows')
     .dropTableIfExists('merchandise')
-    .dropTableIfExists('categories')
+    
 };

@@ -7,8 +7,7 @@ exports.seed = function(knex) {
       description: "Candles",
       price: 10.00,
       weight: 10.4,
-      quanity: 1,
-      categories_id: 1,
+      quanity: 1,      
       category: "Christmas"      
     },
     {
@@ -16,8 +15,7 @@ exports.seed = function(knex) {
       description: "Sign",
       price: 10.00,
       weight: 10.4,
-      quanity: 1,
-      categories_id: 2,
+      quanity: 1,    
       category: "Decor"      
     }
   ])    
