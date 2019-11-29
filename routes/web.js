@@ -6,7 +6,7 @@ const multer  = require('multer')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'assets/uploads')
+        cb(null, "")
     },
     filename: function (req, file, cb) {
         // You could rename the file name
@@ -27,5 +27,11 @@ router.post("/photo", upload.single('photo'), (req, res, next) => {
         image: req.file.path
     });
 });
+
+router.get("/photo", (req, res) => {
+    return res.json({
+        image: req.file.path
+    })
+})
 
 module.exports = router;
