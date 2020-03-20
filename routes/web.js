@@ -17,12 +17,13 @@ const storage = multer.diskStorage({
     }
 });
 
-var upload = multer({storage: storage})
+var upload = multer({dest: 'uploads/'})
 
 const router = express.Router();
 
 // Upload Image
 router.post("/photo", upload.single('photo'), (req, res, next) => {
+    console.log(req.file)
     return res.json({
         image: req.file.path
     });

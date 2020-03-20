@@ -14,7 +14,7 @@ server.use(cors())
 server.use("/api/login", ownersRouter)
 server.use("/api/shows", showsRouter)
 server.use("/api/merchandise", merchandiseRouter)
-server.use(webRoutes)
+server.use("/", webRoutes)
 
 
 server.get('/', (req, res) => {
