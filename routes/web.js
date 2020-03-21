@@ -22,16 +22,16 @@ var upload = multer({dest: 'uploads/'})
 const router = express.Router();
 
 // Upload Image
-router.post("/photo", upload.single('photo'), (req, res, next) => {
-    console.log(req.file)
+router.post("/photo", upload.single('products'), (req, res, next) => {
+    console.log(req.body)
     return res.json({
-        image: req.file.path
+        image: req.body
     });
 });
 
 router.get("/photo", (req, res) => {
     return res.json({
-        image: req.file.path
+        image: req.body
     })
 })
 
