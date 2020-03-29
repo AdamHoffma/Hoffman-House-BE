@@ -14,12 +14,24 @@ router.get("/", (req, res) => {
 
 router.get('/:id', (req, res) => {
     const {id} = req.params
+    console.log(req.params)
     db.findbyId(id)
     .then(merch => {
         res.status(200).json(merch)
     })
     .catch(error =>{
         res.status(500).json({message: "Could not find merch, server error"})
+    })
+})
+
+router.get('merch/:category', (req, res) => {
+    console.log(req.body)   
+    db.findByCategory(category)
+    .then(cat => {        
+        res.status(200).json(cat)
+    })
+    .catch(error => {
+        res.status(500).json({message: "Could not pull up products by categoy, server error"})
     })
 })
 
