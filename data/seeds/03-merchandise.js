@@ -8,7 +8,10 @@ exports.seed = function(knex) {
       price: 10.00,
       weight: 10.4,
       quanity: 1,      
-      category: "Christmas"      
+      category: "Christmas",
+      name: "Candles",
+      SKU: "102423"
+
     },
     {
       image: "",
@@ -16,7 +19,9 @@ exports.seed = function(knex) {
       price: 10.00,
       weight: 10.4,
       quanity: 1,    
-      category: "Decor"      
+      category: "Decor",     
+      name: "Candles",
+      SKU: "102423" 
     }
   ])    
 };

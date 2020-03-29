@@ -33,7 +33,11 @@ exports.up = function(knex) {
             .string('category')
             .notNullable()
         merchandise
+            .string('name')
+        merchandise
             .string('description', 500),
+        merchandise
+            .integer('SKU')
         merchandise
             .decimal('price', null)
         merchandise
