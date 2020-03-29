@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => {    
     const {id} = req.params
     console.log(req.params)
     db.findbyId(id)
@@ -24,8 +24,10 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.get('merch/:category', (req, res) => {
-    console.log(req.body)   
+router.get('/merch/:category', (req, res) => {
+    console.log(req.body)
+    console.log(req.params)
+    const {category} = req.params   
     db.findByCategory(category)
     .then(cat => {        
         res.status(200).json(cat)

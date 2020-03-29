@@ -17,7 +17,7 @@ function findbyId(id) {
 }
 
 function findByCategory(category) {
-    return db('merchandise').where("category", category)
+    return db('merchandise').where("category", category).first()
 }
 function post(merchandise) {
     return db('merchandise').insert(merchandise)
